@@ -21,25 +21,28 @@ module Calculator
 
       # Lendo a opção do usuário (inteiro).
 
-      opcao = gets.chomp.to_i
+      option = gets.chomp.to_i
 
       puts "\n \n"
 
-      case opcao
+      case option
       when 1
         puts "Digite os nomes dos alunos e suas respectivas notas:"
         # (no formato {nome_do_aluno1: nota_aluno1, ..., nome_do_alunon: nota_alunon })"      
         # Onde "nome_do_alunoi" é uma String e "nota_alunoi" é do tipo Float.
        
-        entrada = gets.chomp # Leitura dos dados
+        input = gets.chomp # Leitura dos dados
     
-        grades = JSON.parse(entrada) # Criando um objeto JSON
+        grades = JSON.parse(input) # Criando um objeto JSON
 
-        puts "Digite o nome dos alunos que estão na lista negra:"
+        puts "Digite os nomes dos alunos que estão na lista negra:"
 
         blacklist = gets.chomp # Aluno que estão na lista negra
 
-        operator.biased_mean(grades, blacklist) # Chamando a operação "biased_mean"
+        average = operator.biased_mean(grades, blacklist) # Chamando a operação "biased_mean"
+       
+        puts "A média da turma foi: #{average.round(2)}." # Apresentando a saída com apenas duas casas decimais
+      
       when 2
         
       when 3
