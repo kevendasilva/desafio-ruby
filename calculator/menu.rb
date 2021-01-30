@@ -42,9 +42,13 @@ module Calculator
         average = operator.biased_mean(grades, blacklist) # Chamando a operação "biased_mean"
        
         puts "A média da turma foi: #{average.round(2)}." # Apresentando a saída com apenas duas casas decimais
-      
       when 2
-        
+        puts "Digite um ou mais números:"
+        numbers = gets.chomp # Número(s) utilizado(s) na verificação.
+
+        divisible = operator.no_integers(numbers)
+
+        puts divisible # Resultado da verificação
       when 3
  
       when 4

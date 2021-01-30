@@ -26,7 +26,8 @@ module Calculator
     end
   
     def no_integers(numbers)
-  
+      puts numbers
+      return "Teste"
     end
   
     def filter_films(genres, year)
