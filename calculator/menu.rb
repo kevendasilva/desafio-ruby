@@ -4,7 +4,7 @@ module Calculator
   class Menu
     def initialize
 
-      # Menu de inicialização da calculadora
+      # Menu de inicialização da calculadora.
 
       puts "---------------------------------------"
       puts "| Seja bem-vindo à calculadora maluca |" 
@@ -15,10 +15,12 @@ module Calculator
       puts "4 - Sair \n \n"
       puts "Opção de número:"
 
-      # Lendo a opção do usuário (inteiro)
+      # Lendo a opção do usuário (inteiro).
 
       @opcao = gets.chomp.to_i
 
+      # Realizando a operação, de acordo com a opção escolhida pelo usuário.
+      
     end
   end
 end
