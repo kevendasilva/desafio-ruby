@@ -7,9 +7,6 @@ module Calculator
     include ExtraOperations
   
     def biased_mean(grades, blacklist)
-<<<<<<< HEAD
-
-=======
       # "sum" corresponde a sum das notas dos alunos que não estão na lista negra
       # nStudents número de alunos que não estão na lista negra
       sum = 0
@@ -26,7 +23,6 @@ module Calculator
       end
       nStudents = grades.size # Número de alunos
       return (sum.to_f / nStudents) # Retornando o resultado, ou seja, a média.
->>>>>>> Implementaçao da operaçao Media Preconceituosa
     end
   
     def no_integers(numbers)
