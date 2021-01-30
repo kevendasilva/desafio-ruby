@@ -7,8 +7,7 @@ module Calculator
     include ExtraOperations
   
     def biased_mean(grades, blacklist)
-      puts grades
-      puts blacklist
+
     end
   
     def no_integers(numbers)
