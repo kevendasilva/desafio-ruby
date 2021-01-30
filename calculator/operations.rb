@@ -26,7 +26,38 @@ module Calculator
     end
   
     def no_integers(numbers)
+      
+      def verification(number)
+        if number.length == 1
+          if number == "0"
+            return "S"
+          else
+            return "N"
+          end
+        else
+          lastTwoDigits = number[number.length - 2] + number[number.length - 1]
+          if (lastTwoDigits == "00" or lastTwoDigits == "25" or 
+              lastTwoDigits == "50" or lastTwoDigits == "75") 
+            return "S"
+          else
+            return "N"
+          end
+        end
+      end
+      
+      divisible = ""
 
+      numbersArray = numbers.split
+
+      for number in numbersArray
+        if number != numbersArray.last
+          divisible += verification(number) + " "
+        else
+          divisible += verification(number)
+        end
+      end
+
+      return divisible
     end
   
     def filter_films(genres, year)
