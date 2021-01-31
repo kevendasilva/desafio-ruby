@@ -50,7 +50,7 @@ module Calculator
 
         puts divisible # Resultado da verificação
       when 3
- 
+        
       when 4
         puts "Você saiu da calculadora."
       else

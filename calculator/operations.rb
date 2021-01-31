@@ -26,15 +26,14 @@ module Calculator
     end
   
     def no_integers(numbers)
-      
-      def verification(number)
-        if number.length == 1
+      def verification(number) # Método que verifica se o número (String) é divisivel por 25
+        if number.length == 1 # Caso o número seja de apenas um digito
           if number == "0"
             return "S"
           else
             return "N"
           end
-        else
+        else # Caso o número possua mais de um digito ou, possua um digito e tenha sinal negativo
           lastTwoDigits = number[number.length - 2] + number[number.length - 1]
           if (lastTwoDigits == "00" or lastTwoDigits == "25" or 
               lastTwoDigits == "50" or lastTwoDigits == "75") 
@@ -45,19 +44,19 @@ module Calculator
         end
       end
       
-      divisible = ""
+      divisible = "" # Variavel utilizada para armazenar a resposta
 
       numbersArray = numbers.split
 
-      for number in numbersArray
+      for number in numbersArray # Percorrendo o Array de Strings
         if number != numbersArray.last
-          divisible += verification(number) + " "
-        else
+          divisible += verification(number) + " " # O método "verification"
+        else                                      # Verifica se o número é divisivel por 25
           divisible += verification(number)
         end
       end
 
-      return divisible
+      return divisible # Retornando o resultado
     end
   
     def filter_films(genres, year)
