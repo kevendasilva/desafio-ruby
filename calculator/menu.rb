@@ -2,14 +2,14 @@ require_relative 'operations'
 require 'json'
 
 module Calculator
-  class Menu
-    def initialize
-      # Instanciando um objeto com a classe Operations
 
-      operator = Operations.new
+  class Menu
+
+    def initialize
+     
+      operator = Operations.new  # Instanciando um objeto com a classe Operations
 
       # Menu de inicialização da calculadora.
-
       puts "---------------------------------------"
       puts "| Seja bem-vindo à calculadora maluca |" 
       puts "--------------------------------------- \n \n"
@@ -19,16 +19,16 @@ module Calculator
       puts "4 - Sair \n \n"
       puts "Opção de número:"
 
-      # Lendo a opção do usuário (inteiro).
-
-      option = gets.chomp.to_i
+      
+      option = gets.chomp.to_i # Lendo a opção do usuário (inteiro).
 
       puts "\n \n"
 
       # Realizando a operação, de acordo com a opção escolhida pelo usuário.
 
       case option
-      when 1
+
+      when 1 # Média preconceituosa
         puts "Digite os nomes dos alunos e suas respectivas notas:"
         # (no formato {nome_do_aluno1: nota_aluno1, ..., nome_do_alunon: nota_alunon })"      
         # Onde "nome_do_alunoi" é uma String e "nota_alunoi" é do tipo Float.
@@ -37,21 +37,27 @@ module Calculator
     
         grades = JSON.parse(input) # Criando um objeto JSON
 
+        puts "\n \n"
+
         puts "Digite os nomes dos alunos que estão na lista negra:"
 
         blacklist = gets.chomp # Aluno que estão na lista negra
 
         average = operator.biased_mean(grades, blacklist) # Chamando a operação "biased_mean"
        
-        puts "A média da turma foi: #{average.round(2)}." # Apresentando a saída com apenas duas casas decimais
-      when 2
+        puts "\n \n A média da turma foi: #{average.round(2)} . \n \n" # Apresentando a saída com apenas duas casas decimais
+      
+      when 2 # Calculadora sem números
         puts "Digite um ou mais números:"
         numbers = gets.chomp # Número(s) utilizado(s) na verificação.
 
         divisible = operator.no_integers(numbers)
 
+        puts "\n \nO resultado foi:"
         puts divisible # Resultado da verificação
-      when 3
+        puts "\n \n"
+
+      when 3 # Filtrar filmes
         puts "Escolha os gêneros do filmes:"
         genres = gets.chomp # Gêneros dos filmes
         puts "Ano escolhido:"
@@ -67,13 +73,17 @@ module Calculator
           puts "#{film} \n"
         end
         puts "------------------- \n \n"
-      when 4
-        puts "Você saiu da calculadora."
+
+      when 4 # Saindo
+        puts "Você saiu da calculadora. \n \n"
         exit
-      else
-        puts "Opção inválida."
+
+      else # Opção inválida
+        puts "(!) Opção inválida. (!) \n \n"
       end
-      
+    
     end
+
   end
+
 end
