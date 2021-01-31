@@ -58,6 +58,15 @@ module Calculator
         year = gets.chomp.to_i # Ano escolhido pelo usuário
 
         listOfFilms = operator.filter_films(genres, year) # Lista de filmes
+
+        # Exibindo nome dos filmes
+        puts "-------------------"
+        puts "| Lista de filmes |" 
+        puts "------------------- \n"
+        for film in listOfFilms
+          puts "#{film} \n"
+        end
+        puts "------------------- \n \n"
       when 4
         puts "Você saiu da calculadora."
         exit

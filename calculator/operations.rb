@@ -62,7 +62,24 @@ module Calculator
     def filter_films(genres, year)
       films = get_films
       
-      # Supondo que os gêneros a qual um filme pertence estão em ordem alfabetica
+      # Supondo que a lista dos gêneros de um filme qualquer, estão em ordem alfabetica
+      # ou seja, estão ordenados.
+
+      genres_array = genres.split # Transformando String em Array de String
+
+      genres_array = genres_array.sort # Ordenando o Array (ordem alfabética)
+
+      listOfFilms = []
+
+      # Verificação
+      # films[:movies][i] - i indica o filme da vez, começando em 0.
+      for movie in films[:movies]
+        if (genres_array == movie[:genres] and movie[:year].to_i >= year)
+          listOfFilms.push(movie[:title])
+        end
+      end
+
+      return listOfFilms # Retornando o resultado
 
     end
     
