@@ -25,6 +25,8 @@ module Calculator
 
       puts "\n \n"
 
+      # Realizando a operação, de acordo com a opção escolhida pelo usuário.
+
       case option
       when 1
         puts "Digite os nomes dos alunos e suas respectivas notas:"
@@ -62,8 +64,6 @@ module Calculator
       else
         puts "Opção inválida."
       end
-
-      # Realizando a operação, de acordo com a opção escolhida pelo usuário.
       
     end
   end
