@@ -61,7 +61,9 @@ module Calculator
   
     def filter_films(genres, year)
       films = get_films
-  
+      
+      # Supondo que os gêneros a qual um filme pertence estão em ordem alfabetica
+
     end
     
     private

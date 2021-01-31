@@ -50,9 +50,15 @@ module Calculator
 
         puts divisible # Resultado da verificação
       when 3
-        
+        puts "Escolha os gêneros do filmes:"
+        genres = gets.chomp # Gêneros dos filmes
+        puts "Ano escolhido:"
+        year = gets.chomp.to_i # Ano escolhido pelo usuário
+
+        listOfFilms = operator.filter_films(genres, year) # Lista de filmes
       when 4
         puts "Você saiu da calculadora."
+        exit
       else
         puts "Opção inválida."
       end
